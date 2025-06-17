@@ -24,10 +24,8 @@ A bash script for formatting and colorizing Claude raw JSON output with intellig
 
 ```bash
 # Format Claude JSON output from a file
-./pretty_claude.sh < claude_output.jsonl
+claude --print --verbose --output-format=stream-json "What directory am I in and what files are in it?" | ./pretty_claude.sh
 
-# Pipe Claude output directly
-claude_command | ./pretty_claude.sh
 
 # Process the example file
 ./pretty_claude.sh < example.jsonl
